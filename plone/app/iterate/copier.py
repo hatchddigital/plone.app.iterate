@@ -51,6 +51,7 @@ class ContentCopier( object ):
         self.context = context
 
     def copyTo( self, container ):
+        print("Copy")
         wc = self._copyBaseline( container )
         wc_ref = wc.addReference(
             self.context,
@@ -60,6 +61,7 @@ class ContentCopier( object ):
         return wc, wc_ref
 
     def merge( self ):
+        print("Merge")
         baseline = self._getBaseline()
 
         # delete the working copy reference to the baseline
